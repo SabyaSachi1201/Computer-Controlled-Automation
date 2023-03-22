@@ -107,24 +107,24 @@ int main(void)
 	 	  HAL_UART_Transmit(&huart1,&recieve,messg,HAL_MAX_DELAY); //in place of this , if we use uart6 to transmit data to another MCU
 	 	 if(recieve[0]=='R'&& recieve[1]=='1'&& recieve[2]=='N')
 	 		  	  {
-	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,1);
+	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,1); // Makes the PA5 as high
 	 		  	  }
 	 		  	  else if(recieve[0]=='R'&& recieve[1]=='1'&& recieve[2]=='F')
 	 		  	  {
-	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0);
+	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0); // Makes the PA5 as low
 
 	 		  	  }
 	 		  	  else if(recieve[0]=='R'&& recieve[1]=='2'&& recieve[2]=='N')
 	 		  	  {
-	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6,1);
+	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6,1); // Makes the PA6 as high
 	 		  	  }
 	 		  	else if(recieve[0]=='R'&& recieve[1]=='2'&& recieve[2]=='F')
 	 		  		  {
-	 		  		  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6,0);
+	 		  		  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6,0); //Makes the PA6 as low
 	 		  		  }
-	 		  	else
+	 		  	else   //by default keeps both the PA5 and PA6 as low
 	 		  	{
-	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0);
+	 		  		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0); 
 	 			  	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6,0);
 	 		  	}
     /* USER CODE BEGIN 3 */
