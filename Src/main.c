@@ -103,7 +103,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_UART_Receive(&huart1,&recieve,messg,HAL_MAX_DELAY);
+	  HAL_UART_Receive(&huart1,&recieve,messg,HAL_MAX_DELAY); // Shows the greetings message everytime the program is run or the RESET button is pressed on the STM32-F411RE MCU
 	 	  HAL_UART_Transmit(&huart1,&recieve,messg,HAL_MAX_DELAY); //in place of this , if we use uart6 to transmit data to another MCU
 	 	 if(recieve[0]=='R'&& recieve[1]=='1'&& recieve[2]=='N')
 	 		  	  {
