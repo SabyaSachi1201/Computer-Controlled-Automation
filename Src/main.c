@@ -65,7 +65,7 @@ static void MX_USART1_UART_Init(void);
   * @retval int
   */
 char recieve[3];
-char greetings[20]="Home-Automation\n\r";
+char greetings[20]="Home-Automation\n\r"; // greetings message that will be transmitted by the MCU to the terminal
 uint8_t size=sizeof(greetings);
 uint8_t messg=sizeof(recieve);
 int main(void)
@@ -95,7 +95,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Transmit(&huart1,&greetings,size,HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart1,&greetings,size,HAL_MAX_DELAY); // Transmits a greeting message everytime the program runs or reset button get's pressed
   /* USER CODE END 2 */
 
   /* Infinite loop */
